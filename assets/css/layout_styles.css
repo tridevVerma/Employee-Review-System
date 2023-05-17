@@ -9,21 +9,34 @@
   --light-bg-1: hsl(0, 0%, 95%);
   --light-bg-2: hsl(250, 10%, 90%);
   --light-bg-3: hsl(240, 5%, 90%);
-  --light-text: hsl(250, 30%, 10%); }
+  --light-text: hsl(250, 30%, 10%);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --primary: hsl(205, 80%, 50%); }
 
 [data-theme="light"] {
-  --nav-bg: var(--light-bg-1);
-  --nav-text: var(--light-text-1);
+  --nav-bg: var(--primary);
+  --nav-text: var(--dark-text);
   --body-bg: var(--light-bg-2);
   --body-text: var(--light-text);
-  --sidebar-bg: var(--light-bg-3); }
+  --sidebar-bg: var(--light-bg-3);
+  --no-focus: hsl(240, 20%, 85%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 15%);
+  --body-bg: hsl(220, 20%, 95%); }
 
 [data-theme="dark"] {
   --nav-bg: var(--dark-bg-1);
   --nav-text: var(--dark-text);
   --body-bg: var(--dark-bg-2);
   --body-text: var(--dark-text);
-  --sidebar-bg: var(--dark-bg-3); }
+  --sidebar-bg: var(--dark-bg-3);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%); }
 
 *,
 * > ul {
@@ -35,19 +48,19 @@
   list-style: none; }
 
 html {
-  font-size: 13px; }
+  font-size: 13px;
+  scroll-behavior: smooth; }
   @media screen and (min-width: 768px) {
     html {
       font-size: 15px; } }
-  @media screen and (min-width: 992px) {
-    html {
-      font-size: 17px; } }
 
 body {
   position: relative;
-  font-family: "Montserrat", sans-serif;
   min-height: 100vh;
-  background-color: var(--body-bg); }
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--body-bg);
+  display: flex;
+  flex-direction: column; }
 
 button:hover {
   cursor: pointer; }

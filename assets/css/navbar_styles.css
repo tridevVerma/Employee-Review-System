@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0%;
   left: 0%;
   background-color: var(--nav-bg);
@@ -26,7 +26,7 @@ nav {
       nav .nav-btns {
         gap: 3rem; } }
     nav .nav-btns > button {
-      width: 40px;
+      width: 2.5rem;
       aspect-ratio: 1 / 1;
       border-radius: 0.2rem;
       background-color: var(--nav-text); }

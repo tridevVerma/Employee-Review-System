@@ -1,0 +1,130 @@
+@import "variables";
+// INPUT-BOX STYLING
+
+main {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-content: center;
+    grid-gap: 2rem;
+
+    @media screen and (min-width: $small) {
+      width: 60%;
+    }
+    @media screen and (min-width: $medium) {
+      width: 40%;
+    }
+
+    > .heading {
+      text-align: center;
+      > img {
+        width: 6rem;
+      }
+      > h1 {
+        margin: 2rem auto;
+        font-size: 2rem;
+        color: var(--on-focus);
+      }
+    }
+
+    > .input-box {
+      width: 100%;
+      position: relative;
+      > input {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 0.8rem 1rem;
+        outline: none;
+        background-color: transparent;
+        border: 3px solid var(--no-focus);
+        color: var(--body-text);
+        transition: 0.35s all;
+
+        @media screen and (min-width: $medium) {
+          font-size: 1.4rem;
+        }
+      }
+
+      > span {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--no-focus);
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transition: 0.35s all;
+        z-index: -1;
+        @media screen and (min-width: $medium) {
+          font-size: 1.4rem;
+        }
+      }
+
+      > input:valid ~ span,
+      > input:focus ~ span {
+        color: var(--on-focus);
+        background-color: var(--body-bg);
+        transform: translate(10px, -6px);
+        font-size: 0.8rem;
+        border-left: 2px solid var(--on-focus);
+        border-right: 2px solid var(--on-focus);
+        padding: 0rem 0.6rem;
+        z-index: 2;
+        @media screen and (min-width: $medium) {
+          font-size: 1rem;
+        }
+      }
+
+      > input:valid,
+      > input:focus {
+        border: 3px solid var(--on-focus);
+      }
+
+      > input:placeholder-shown ~ span,
+      > input:-webkit-autofill ~ span {
+        color: var(--on-focus);
+        background-color: var(--body-bg);
+        transform: translate(10px, -6px);
+        font-size: 0.8rem;
+        border-left: 2px solid var(--on-focus);
+        border-right: 2px solid var(--on-focus);
+        padding: 0rem 0.6rem;
+        z-index: 2;
+        @media screen and (min-width: $medium) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    > button {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1.2rem;
+      background-color: transparent;
+      color: var(--no-focus);
+      border: 3px solid var(--no-focus);
+      transition: 0.25s all;
+      @media screen and (min-width: $medium) {
+        font-size: 1.4rem;
+      }
+    }
+
+    > button:hover {
+      cursor: pointer;
+      background: var(--on-focus);
+      color: #fff;
+      border: 3px solid var(--on-focus);
+    }
+  }
+}
