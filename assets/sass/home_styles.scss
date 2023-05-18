@@ -1,0 +1,34 @@
+@import "colors";
+@import "variables";
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  > h1 {
+    font-size: 1.8rem;
+    @media screen and (min-width: $medium) {
+      font-size: 2rem;
+    }
+    @media screen and (min-width: $large) {
+      font-size: 2.5rem;
+    }
+  }
+
+  > a {
+    display: block;
+    padding: 1rem 3.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--body-bg);
+    background-color: var(--body-text);
+    transition: 0.25s all;
+    &:hover {
+      background-color: var(--primary);
+      color: var(--clr-light);
+    }
+  }
+}

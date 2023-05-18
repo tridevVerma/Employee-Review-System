@@ -1,1 +1,11 @@
-<div class="home-container">This is home page.</div>
+<link rel="stylesheet" href="/css/home_styles.css" />
+<main>
+  <% if(locals.user && locals.user.employee) { %>
+  <h1>You're a employee</h1>
+  <% } else if (locals.user && !locals.user.employee) { %>
+  <h1>Please wait while admin adds you to employees group !!</h1>
+  <% } else { %>
+  <h1>Login to view content !!</h1>
+  <a href="/signin">Login Now</a>
+  <% } %>
+</main>

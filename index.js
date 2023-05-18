@@ -2,11 +2,13 @@ const env = require("./configs/environment");
 const path = require("path");
 const express = require("express");
 const app = express();
+const passport = require("passport"); // to use different authentication strategies
+require("./configs/localStrategyConfig"); // passport -> local strategy
 const db = require("./configs/mongoose"); // mongoose connection
 var expressLayouts = require("express-ejs-layouts"); // use layouts with ejs
 const cookieParser = require("cookie-parser"); // cookie parser required by connect-flash
 const session = require("express-session"); // express-session required by connect-flash
-
+const connectMongoStore = require("connect-mongo");
 const flash = require("connect-flash"); // to show toast messages
 const { customFlash } = require("./configs/customFlashMiddleware.js"); // toast messages configuration
 const port = env.server_port;
@@ -25,17 +27,26 @@ app.set("layout extractStyles", true);
 app.set("view engine", "ejs");
 app.set("views", env.views_path);
 
+// session to store logged user
 app.use(
   session({
-    name: "Issue-Tracker",
+    name: "ER System",
     secret: env.session_secret_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
-      maxAge: 60000,
+      maxAge: 1000 * 60 * 5, // logged in for 5 minutes
     },
+    store: connectMongoStore.create({ mongoUrl: env.mongodb_URI }),
   })
 );
+
+// Initialize passport and provide session to authenticate and save signed user data
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Set signed user info from session cookie to req.locals to be accessible by views
+app.use(passport.setAuthenticatedUser);
 
 // configure flash messages (already configured cookie-parser and express-session above)
 app.use(flash());

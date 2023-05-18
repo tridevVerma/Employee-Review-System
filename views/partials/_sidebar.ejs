@@ -5,15 +5,20 @@
       <i class="fa-solid fa-xmark"></i>
     </button>
 
+    <% if(locals.user) { %>
+    <ul>
+      <li class="greet-user">Welcome <%=locals.user.firstname%></li>
+    </ul>
+    <% } else { %>
     <ul>
       <li>
-        <a href="/signup">
+        <a href="/users/signup">
           <i class="fa-solid fa-user"></i>
           <span>Sign Up</span>
         </a>
       </li>
       <li>
-        <a href="/signin">
+        <a href="/users/signin">
           <i class="fa-solid fa-user-plus"></i>
           <span>Sign In</span>
         </a>
@@ -27,5 +32,6 @@
         </a>
       </li>
     </ul>
+    <% } %>
   </div>
 </sidebar>

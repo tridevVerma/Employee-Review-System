@@ -32,6 +32,18 @@
       grid-template-rows: repeat(3, 4rem);
       align-items: center;
       grid-gap: 2rem; }
+      .sidebar-container > .sidebar > ul > .greet-user {
+        padding: 1rem;
+        height: 100%;
+        font-size: 1.2rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+        background-color: var(--body-text);
+        color: var(--sidebar-bg); }
+        @media screen and (min-width: 992px) {
+          .sidebar-container > .sidebar > ul > .greet-user {
+            font-size: 1.4rem; } }
       .sidebar-container > .sidebar > ul > li > a {
         display: block;
         padding: 1rem;

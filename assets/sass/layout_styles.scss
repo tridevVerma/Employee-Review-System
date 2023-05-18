@@ -25,6 +25,7 @@ body {
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;
   background-color: var(--body-bg);
+  color: var(--body-text);
   display: flex;
   flex-direction: column;
 }
@@ -41,6 +42,7 @@ button {
   background-color: transparent;
 }
 
+// Overlay on body to show modals or sidebar
 .overlay {
   width: 100%;
   min-height: 100vh;
@@ -52,9 +54,28 @@ button {
   display: none;
 }
 
+// Hide elements on small screen
 .hide-on-small-screen {
   display: none;
   @media screen and(min-width: $large) {
     display: inline-block;
+  }
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--body-text);
+  font-size: 1.2rem;
+  transition: background-color 5000s ease-in-out 0s;
+  @media screen and (min-width: $medium) {
+    font-size: 1.4rem;
   }
 }

@@ -2,8 +2,7 @@
 // INPUT-BOX STYLING
 
 main {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,6 +88,10 @@ main {
       > input:valid,
       > input:focus {
         border: 3px solid var(--on-focus);
+      }
+
+      > input:-webkit-autofill {
+        background-color: yellow;
       }
 
       > input:placeholder-shown ~ span,
