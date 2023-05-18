@@ -2,6 +2,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
+const env = require("./environment");
 
 // Authenticate using passport local strategy
 passport.use(
@@ -68,6 +69,7 @@ passport.setAuthenticatedUser = function (req, res, next) {
   if (req.isAuthenticated()) {
     /** req.user contains the current signed in user from the session cookie
        and we are just sending this to the locals for the views */
+
     res.locals.user = req.user;
   }
   return next();
