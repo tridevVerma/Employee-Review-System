@@ -1,0 +1,181 @@
+@import "variables";
+@import "colors";
+
+.employee-view {
+  width: 95%;
+
+  @media screen and (min-width: $medium) {
+    width: 80%;
+  }
+  @media screen and (min-width: $xlarge) {
+    width: 60%;
+  }
+  > .container {
+    margin: 2rem auto;
+    > .tabs {
+      > ul {
+        display: flex;
+        align-items: center;
+        > li {
+          padding: 1rem 2.5rem;
+          font-size: 1.2rem;
+          @media screen and (min-width: $medium) {
+            font-size: 1.5rem;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        > .active-tab {
+          background-color: var(--on-focus);
+          color: var(--clr-light);
+        }
+      }
+    }
+
+    > .tab-content {
+      margin-top: -3px;
+      border: 3px dashed var(--no-focus);
+      padding: 1rem;
+      @media screen and (min-width: $medium) {
+        padding: 2rem;
+      }
+      > .feedback-form {
+        > .card {
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          background-color: var(--card-bg);
+          padding: 1.5rem;
+          margin-bottom: 3rem;
+          border-radius: 1rem;
+          &:last-child {
+            margin-bottom: 0rem;
+          }
+          > .card-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            @media screen and(min-width: $medium) {
+              flex-direction: row;
+            }
+            > h1 {
+              font-size: 1.5rem;
+              @media screen and (min-width: $medium) {
+                font-size: 1.8rem;
+              }
+              > span {
+                font-style: italic;
+              }
+            }
+          }
+
+          > .card-content {
+            margin-top: 1rem;
+            > .ratings {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: row-reverse;
+              gap: 2rem;
+              @media screen and(min-width: $medium) {
+                justify-content: flex-end;
+              }
+              > i {
+                font-size: 1.5rem;
+                overflow: hidden;
+                @media screen and (min-width: $medium) {
+                  font-size: 2rem;
+                }
+                &:hover,
+                &:hover ~ i {
+                  color: gold;
+                  cursor: pointer;
+                }
+              }
+            }
+            > form {
+              width: 100%;
+              margin-top: 2rem;
+              > textarea {
+                display: block;
+                width: 100%;
+                border: 2px dotted var(--no-focus);
+                padding: 1.5rem 2rem;
+                font-size: 1.2rem;
+
+                &:active,
+                &:focus {
+                  outline: none;
+                }
+              }
+
+              > button {
+                background-color: var(--on-focus);
+                color: var(--clr-light);
+                font-size: 1.2rem;
+                padding: 0.6rem 2.5rem;
+                display: block;
+                margin-left: auto;
+                margin-top: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+
+      > .previous-feedbacks-list {
+        display: none;
+        > .card {
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          background-color: var(--card-bg);
+          padding: 1.5rem;
+          margin-bottom: 3rem;
+          border-radius: 0.8rem;
+          &:last-child {
+            margin-bottom: 0rem;
+          }
+          > .card-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            > h1 {
+              font-size: 1.5rem;
+              @media screen and (min-width: $medium) {
+                font-size: 1.8rem;
+              }
+              > span {
+                font-style: italic;
+              }
+            }
+            > .star-count {
+              font-size: 1.2rem;
+              > i {
+                font-size: 1.2rem;
+                color: gold;
+              }
+            }
+          }
+
+          > .admin-info {
+            margin: 1rem auto;
+            > span {
+              font-weight: 600;
+            }
+          }
+
+          > .review-msg {
+            margin: 2rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rated {
+  color: gold;
+}

@@ -35,7 +35,7 @@ app.use(
     saveUninitialized: false,
     resave: false,
     cookie: {
-      maxAge: 1000 * 60 * 5, // logged in for 5 minutes
+      maxAge: 1000 * 60 * 60, // logged in for 60 minutes ~ 1 hr
     },
     store: connectMongoStore.create({ mongoUrl: env.mongodb_URI }),
   })

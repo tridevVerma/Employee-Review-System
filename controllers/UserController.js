@@ -46,7 +46,6 @@ module.exports.signup = async (req, res) => {
         lastname,
         email,
         password: encryptedPwd,
-        employee: false,
       });
       req.flash("success", "User created Successfully");
     } else {
@@ -55,6 +54,7 @@ module.exports.signup = async (req, res) => {
     }
     return res.redirect("/users/signin");
   } catch (err) {
+    console.log(err);
     req.flash("error", err);
     return res.redirect("back");
   }

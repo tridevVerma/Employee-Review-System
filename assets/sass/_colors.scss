@@ -14,6 +14,7 @@
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
   --primary: hsl(205, 80%, 50%);
+  --card-bg: hsl(250, 30%, 20%);
 }
 
 [data-theme="light"] {
@@ -26,6 +27,7 @@
   --on-focus: hsl(205, 80%, 50%);
   --body-text: hsl(0, 0%, 15%);
   --body-bg: hsl(220, 20%, 95%);
+  --card-bg: hsl(0, 0%, 96%);
 }
 
 [data-theme="dark"] {
@@ -38,4 +40,5 @@
   --on-focus: hsl(205, 80%, 50%);
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
+  --card-bg: hsl(250, 30%, 20%);
 }

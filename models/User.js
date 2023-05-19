@@ -17,8 +17,8 @@ const userSchema = mongoose.Schema({
     required: true,
   },
   employee: {
-    type: Boolean,
-    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    default: null,
   },
 });
 

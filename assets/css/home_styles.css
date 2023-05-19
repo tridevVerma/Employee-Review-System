@@ -13,7 +13,8 @@
   --on-focus: hsl(205, 80%, 50%);
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
-  --primary: hsl(205, 80%, 50%); }
+  --primary: hsl(205, 80%, 50%);
+  --card-bg: hsl(250, 30%, 20%); }
 
 [data-theme="light"] {
   --nav-bg: var(--primary);
@@ -24,7 +25,8 @@
   --no-focus: hsl(240, 20%, 85%);
   --on-focus: hsl(205, 80%, 50%);
   --body-text: hsl(0, 0%, 15%);
-  --body-bg: hsl(220, 20%, 95%); }
+  --body-bg: hsl(220, 20%, 95%);
+  --card-bg: hsl(0, 0%, 96%); }
 
 [data-theme="dark"] {
   --nav-bg: var(--dark-bg-1);
@@ -35,16 +37,19 @@
   --no-focus: hsl(252, 10%, 40%);
   --on-focus: hsl(205, 80%, 50%);
   --body-text: hsl(0, 0%, 95%);
-  --body-bg: hsl(252, 30%, 10%); }
+  --body-bg: hsl(252, 30%, 10%);
+  --card-bg: hsl(250, 30%, 20%); }
 
 main {
-  height: 100vh;
+  margin-top: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4rem; }
   main > h1 {
+    width: 90%;
+    text-align: center;
     font-size: 1.8rem; }
     @media screen and (min-width: 768px) {
       main > h1 {

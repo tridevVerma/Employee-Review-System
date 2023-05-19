@@ -8,7 +8,7 @@ nav {
   background-color: var(--nav-bg);
   padding: 2rem;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto auto;
   align-items: center;
 
   > a {
@@ -25,6 +25,22 @@ nav {
     }
   }
 
+  > ul {
+    display: none;
+    @media screen and (min-width: $medium) {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+    }
+    > li {
+      margin-right: 2rem;
+      > a {
+        color: var(--clr-light);
+        font-size: 1.5rem;
+      }
+    }
+  }
+
   .nav-btns {
     justify-self: end;
     display: flex;
@@ -33,11 +49,16 @@ nav {
     @media screen and (min-width: $large) {
       gap: 3rem;
     }
-    > button {
+    > #sidebar-toggler {
       width: 2.5rem;
       aspect-ratio: 1 / 1;
       border-radius: 0.2rem;
       background-color: var(--nav-text);
+      display: block;
+      @media screen and (min-width: $medium) {
+        display: none;
+      }
+
       > i {
         font-size: 1.5rem;
         color: hsl(240, 30%, 20%);
@@ -46,10 +67,25 @@ nav {
 
     #theme-toggler {
       background-color: transparent;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--no-focus);
+      padding: 0.4rem 0.8rem;
+      border-radius: 2rem;
       > img {
         width: 25px;
-        @media screen and (min-width: $large) {
-          width: 35px;
+        margin-right: 0;
+        @media screen and (min-width: $small) {
+          margin-right: 1.5rem;
+        }
+      }
+      > span {
+        display: none;
+        @media screen and (min-width: $small) {
+          display: inline-block;
+          font-size: 1.3rem;
+          color: var(--clr-light);
         }
       }
     }

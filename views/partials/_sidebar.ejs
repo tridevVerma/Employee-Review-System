@@ -5,26 +5,57 @@
       <i class="fa-solid fa-xmark"></i>
     </button>
 
-    <% if(locals.user) { %>
+    <% if(!locals.user) { %>
     <ul>
-      <li class="greet-user">Welcome <%=locals.user.firstname%></li>
+      <li>
+        <a href="/users/signin">Sign In</a>
+      </li>
+      <li>
+        <a href="/users/signup">Sign Up</a>
+      </li>
+    </ul>
+    <% } else if(locals.user.employee === null) { %>
+    <ul>
+      <li class="greet-user">
+        <a href="/"> Welcome <%=locals.user.firstname%> </a>
+      </li>
       <li>
         <a href="/users/logout">Logout</a>
       </li>
     </ul>
-    <% } else { %>
+    <% } else if(locals.user.employee !== null && locals.user.employee.isAdmin
+    === false) { %>
     <ul>
-      <li>
-        <a href="/users/signup">
-          <i class="fa-solid fa-user"></i>
-          <span>Sign Up</span>
-        </a>
+      <li class="greet-user">
+        <a href="/"> Welcome <%=locals.user.firstname%> </a>
       </li>
       <li>
-        <a href="/users/signin">
-          <i class="fa-solid fa-user-plus"></i>
-          <span>Sign In</span>
-        </a>
+        <a href="/users/feedbacks">Feedbacks</a>
+      </li>
+      <li>
+        <a href="/users/logout">Logout</a>
+      </li>
+    </ul>
+    <% } else if(locals.user.employee !== null && locals.user.employee.isAdmin
+    === true) { %>
+    <ul>
+      <li class="greet-user">
+        <a href="/"> Welcome <%=locals.user.firstname%> </a>
+      </li>
+      <li>
+        <a href="/employees">Employees</a>
+      </li>
+      <li>
+        <a href="/add-employee"> Add Employee </a>
+      </li>
+      <li>
+        <a href="/assign-task"> Assign-Task </a>
+      </li>
+      <li>
+        <a href="/users/feedbacks">Feedbacks</a>
+      </li>
+      <li>
+        <a href="/users/logout">Logout</a>
       </li>
     </ul>
     <% } %>

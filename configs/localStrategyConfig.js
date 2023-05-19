@@ -46,7 +46,11 @@ passport.serializeUser(function (user, done) {
 // deserializing the user from the key in the cookies
 passport.deserializeUser(async function (id, done) {
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate({
+      path: "employee",
+      model: "Employee",
+    });
+
     return done(null, user);
   } catch (err) {
     console.log("Error in deserializing user:", err);

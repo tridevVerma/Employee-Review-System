@@ -5,9 +5,65 @@
     <span>ER System</span>
   </a>
 
+  <% if(!locals.user) { %>
+  <ul>
+    <li>
+      <a href="/users/signin">Sign In</a>
+    </li>
+    <li>
+      <a href="/users/signup">Sign Up</a>
+    </li>
+  </ul>
+  <% } else if(locals.user.employee === null) { %>
+  <ul>
+    <li class="greet-user">
+      <a href="/"> Welcome <%=locals.user.firstname%> </a>
+    </li>
+    <li>
+      <a href="/users/logout">Logout</a>
+    </li>
+  </ul>
+  <% } else if(locals.user.employee !== null && locals.user.employee.isAdmin ===
+  false) { %>
+  <ul>
+    <li class="greet-user">
+      <a href="/"> Welcome <%=locals.user.firstname%> </a>
+    </li>
+    <li>
+      <a href="/users/feedbacks">Feedbacks</a>
+    </li>
+    <li>
+      <a href="/users/logout">Logout</a>
+    </li>
+  </ul>
+  <% } else if(locals.user.employee !== null && locals.user.employee.isAdmin ===
+  true) { %>
+  <ul>
+    <li class="greet-user">
+      <a href="/"> Welcome <%=locals.user.firstname%> </a>
+    </li>
+    <li>
+      <a href="/employees">Employees</a>
+    </li>
+    <li>
+      <a href="/add-employee"> Add Employee </a>
+    </li>
+    <li>
+      <a href="/assign-task"> Assign-Task </a>
+    </li>
+    <li>
+      <a href="/users/feedbacks">Feedbacks</a>
+    </li>
+    <li>
+      <a href="/users/logout">Logout</a>
+    </li>
+  </ul>
+  <% } %>
+
   <div class="nav-btns">
     <button id="theme-toggler">
       <img src="/images/moon.png" alt="" />
+      <span>Night</span>
     </button>
     <button id="sidebar-toggler">
       <i class="fa-solid fa-bars"></i>

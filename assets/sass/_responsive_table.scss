@@ -1,0 +1,81 @@
+@import "colors";
+@import "variables";
+
+table {
+  border: 1px solid var(--no-focus);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+
+  > caption {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  > tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35rem;
+  }
+
+  > th,
+  > td {
+    padding: 0.625rem;
+    text-align: center;
+  }
+
+  > th {
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 600px) {
+    border: 0;
+
+    > caption {
+      font-size: 1.5rem;
+    }
+
+    > thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    > tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    > td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    > td::before {
+      /*
+  * aria-label has no advantage, it won't be read inside a table
+  content: attr(aria-label);
+  */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    > td:last-child {
+      border-bottom: 0;
+    }
+  }
+}
