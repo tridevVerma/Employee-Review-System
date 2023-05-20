@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/all-employees.css" />
+<main>
+  <% if(locals.user && locals.user.employee && locals.user.employee.isAdmin){ %>
+  <div class="employees-container">
+    <% locals.allEmployees.map(employee => { %>
+    <div class="card">
+      <div class="card-heading">
+        <h2>Employee</h2>
+        <a href="/employee/delete" id="employee-<%=employee._id%>">
+          <i class="fa-solid fa-trash"></i>
+        </a>
+      </div>
+      <div class="card-content">
+        <form action="/">
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="<%=employee.user.email%>"
+            />
+          </div>
+          <div>
+            <label for="firstname">Firstname</label>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="<%=employee.user.firstname%>"
+            />
+          </div>
+          <div>
+            <label for="astname">Lastname</label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="<%=employee.user.lastname%>"
+            />
+          </div>
+          <div>
+            <label for="isAdmin">isAdmin</label>
+            <input type="radio" name="isAdmin" id="isAdmin" <%=employee.isAdmin
+            ? 'checked' : ''%> />
+          </div>
+          <button class="update-employee-btn" type="submit">Update</button>
+          <button class="remove-employee-btn" type="submit">Remove</button>
+        </form>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</main>

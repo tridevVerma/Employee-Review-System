@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/add-employee.css" />
+<main>
+  <% if(locals.user && locals.user.employee && locals.user.employee.isAdmin){ %>
+  <table>
+    <caption>
+      Registered Users
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% locals.registeredUsers.map(user => { %>
+      <tr id="user-<%=user._id%>">
+        <td scope="row" data-label="Email"><%=user.email%></td>
+        <td data-label="Name"><%=user.firstname%> <%=user.lastname%></td>
+        <td data-label="Action">
+          <a href="/employee/add/<%=user._id%>" class="add-employee-btn"
+            >Add To Employee</a
+          >
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <% } %>
+</main>
+
+<script src="/scripts/employee.js"></script>

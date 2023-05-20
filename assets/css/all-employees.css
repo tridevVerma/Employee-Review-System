@@ -1,0 +1,101 @@
+:root {
+  --clr-dark: hsl(0, 100%, 0%);
+  --clr-light: hsl(0, 0%, 100%);
+  --dark-bg-1: hsl(250, 30%, 20%);
+  --dark-bg-2: hsl(250, 30%, 10%);
+  --dark-bg-3: hsl(220, 30%, 20%);
+  --dark-text: hsl(0, 0%, 95%);
+  --light-bg-1: hsl(0, 0%, 95%);
+  --light-bg-2: hsl(250, 10%, 90%);
+  --light-bg-3: hsl(240, 5%, 90%);
+  --light-text: hsl(250, 30%, 10%);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --primary: hsl(205, 80%, 50%);
+  --card-bg: hsl(250, 30%, 20%); }
+
+[data-theme="light"] {
+  --nav-bg: var(--primary);
+  --nav-text: var(--dark-text);
+  --body-bg: var(--light-bg-2);
+  --body-text: var(--light-text);
+  --sidebar-bg: var(--light-bg-3);
+  --no-focus: hsl(240, 20%, 85%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 15%);
+  --body-bg: hsl(220, 20%, 95%);
+  --card-bg: hsl(0, 0%, 96%); }
+
+[data-theme="dark"] {
+  --nav-bg: var(--dark-bg-1);
+  --nav-text: var(--dark-text);
+  --body-bg: var(--dark-bg-2);
+  --body-text: var(--dark-text);
+  --sidebar-bg: var(--dark-bg-3);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --card-bg: hsl(250, 30%, 20%); }
+
+main {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem; }
+  main > .employees-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 2rem; }
+    main > .employees-container > .card {
+      min-width: 0;
+      max-width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+      border-radius: 1rem; }
+      @media screen and (min-width: 768px) {
+        main > .employees-container > .card {
+          padding: 1.8rem; } }
+      main > .employees-container > .card > .card-heading {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        main > .employees-container > .card > .card-heading > h1 {
+          font-size: 1.2rem;
+          font-weight: 500; }
+          @media screen and (min-width: 768px) {
+            main > .employees-container > .card > .card-heading > h1 {
+              padding: 1.5rem; } }
+        main > .employees-container > .card > .card-heading > a > i {
+          color: var(--body-text);
+          font-size: 1.5rem; }
+        main > .employees-container > .card > .card-heading > a:hover i {
+          color: crimson; }
+      main > .employees-container > .card > .card-content {
+        margin: 1rem auto; }
+        main > .employees-container > .card > .card-content > form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem; }
+          main > .employees-container > .card > .card-content > form > div {
+            display: grid;
+            grid-template-columns: 40% 60%; }
+            main > .employees-container > .card > .card-content > form > div > input {
+              border: 1px solid grey;
+              padding: 0.4rem 0.6rem; }
+          main > .employees-container > .card > .card-content > form > button {
+            width: 100%;
+            border: 2px solid var(--no-focus);
+            padding: 0.4rem 1rem; }
+            main > .employees-container > .card > .card-content > form > button:hover {
+              border: 2px solid var(--on-focus);
+              background-color: var(--on-focus);
+              color: var(--clr-light); }
