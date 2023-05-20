@@ -3,15 +3,22 @@
   <% if(locals.user && locals.user.employee && locals.user.employee.isAdmin){ %>
   <div class="employees-container">
     <% locals.allEmployees.map(employee => { %>
-    <div class="card">
+    <div class="card" id="employee-<%=employee._id%>">
       <div class="card-heading">
         <h2>Employee</h2>
-        <a href="/employee/delete" id="employee-<%=employee._id%>">
+        <a
+          href="/employee/remove/<%=employee._id%>"
+          class="remove-employee-btn"
+        >
           <i class="fa-solid fa-trash"></i>
         </a>
       </div>
       <div class="card-content">
-        <form action="/">
+        <form
+          action="/employee/update/<%=employee._id%>"
+          method="POST"
+          class="employee-update-form"
+        >
           <div>
             <label for="email">Email</label>
             <input
@@ -39,13 +46,17 @@
               placeholder="<%=employee.user.lastname%>"
             />
           </div>
+          <!-- Rounded switch -->
           <div>
-            <label for="isAdmin">isAdmin</label>
-            <input type="radio" name="isAdmin" id="isAdmin" <%=employee.isAdmin
-            ? 'checked' : ''%> />
+            <span>Is Admin</span>
+            <label class="switch">
+              <input type="checkbox" name="isAdmin" <%=employee.isAdmin ?
+              'checked' : ''%>/>
+              <span class="slider round"></span>
+            </label>
           </div>
-          <button class="update-employee-btn" type="submit">Update</button>
-          <button class="remove-employee-btn" type="submit">Remove</button>
+
+          <button type="submit">Update</button>
         </form>
       </div>
     </div>

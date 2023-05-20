@@ -5,7 +5,11 @@ const router = require("express").Router();
 router.get("/signup", UserController.signupUI);
 router.get("/signin", UserController.signinUI);
 router.post("/signup", UserController.signup);
-router.get("/logout", UserController.destroySession);
+router.get(
+  "/logout",
+  passport.checkAuthentication,
+  UserController.destroySession
+);
 // sign in and create session for the user
 router.post(
   "/signin",

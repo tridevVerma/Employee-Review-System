@@ -69,6 +69,19 @@ passport.checkAuthentication = function (req, res, next) {
   return res.redirect("/users/signin");
 };
 
+passport.checkAdminAuthentication = function (req, res, next) {
+  if (!req.isAuthenticated()) {
+    return res.redirect("/users/signin");
+  }
+
+  if (req.user.employee !== null && req.user.employee.isAdmin) {
+    return next();
+  }
+
+  req.flash("error", "Admin authentication needed !!");
+  return res.redirect("back");
+};
+
 passport.setAuthenticatedUser = function (req, res, next) {
   if (req.isAuthenticated()) {
     /** req.user contains the current signed in user from the session cookie
