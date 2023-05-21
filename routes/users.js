@@ -13,7 +13,7 @@ router.get(
 // sign in and create session for the user
 router.post(
   "/signin",
-  passport.authenticate("local", { failureRedirect: "/signin" }),
+  passport.authenticate("local", { failureRedirect: "/users/signin" }),
   function (req, res) {
     req.flash("success", "Logged in successfully!!");
     return res.redirect("/");

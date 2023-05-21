@@ -9,13 +9,7 @@ const employeeSchema = mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  pendingFeedbacks: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
-  givenFeedbacks: [
+  feedbacks: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

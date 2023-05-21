@@ -9,10 +9,17 @@
     </div>
     <div class="tab-content">
       <div class="feedback-form">
+        <% locals.allFeedbacks.map(feed => { %> <% if (feed.status ===
+        'incomplete') { %>
         <div class="card">
           <div class="card-heading">
-            <h1>Kindly review <span>Saurav</span></h1>
-            <p>Assigned by Tridev Verma</p>
+            <h1>
+              Kindly review <span><%=feed.reviewee.user.firstname%></span>
+            </h1>
+            <p>
+              Assigned by <%=feed.assignedBy.user.firstname%>
+              <%=feed.assignedBy.user.lastname%>
+            </p>
           </div>
           <div class="card-content">
             <div class="ratings">
@@ -22,7 +29,7 @@
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <form action="/write-review">
+            <form action="/feedbacks/write-review" method="post">
               <input
                 type="hidden"
                 name="ratings"
@@ -30,7 +37,7 @@
                 value="0"
               />
               <textarea
-                name="review-text"
+                name="reviewText"
                 class="review-text"
                 rows="5"
                 placeholder="Write your review..."
@@ -39,8 +46,11 @@
             </form>
           </div>
         </div>
+        <% } %> <% }) %>
       </div>
       <div class="previous-feedbacks-list">
+        <% locals.allFeedbacks.map(feed => { %> <% if (feed.status ===
+        'complete') { %>
         <div class="card">
           <div class="card-heading">
             <h1>Reviewed to <span>Saurav</span></h1>
@@ -54,6 +64,7 @@
             This is the message content of the review given by Tridev Verma.
           </p>
         </div>
+        <% } %> <%})%>
       </div>
     </div>
   </div>

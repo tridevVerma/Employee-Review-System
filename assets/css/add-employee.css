@@ -3,7 +3,7 @@ table {
   border-collapse: collapse;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 90%;
   table-layout: fixed; }
 
 table caption {
@@ -21,7 +21,7 @@ table td {
   text-align: center; }
 
 table th {
-  font-size: 0.85em;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase; }
 
@@ -34,7 +34,7 @@ table td a {
   table {
     border: 0; }
   table caption {
-    font-size: 1.3em; }
+    font-size: 1.3rem; }
   table thead {
     border: none;
     clip: rect(0 0 0 0);
@@ -51,7 +51,7 @@ table td a {
   table td {
     border-bottom: 1px solid #ddd;
     display: block;
-    font-size: 0.8em;
+    font-size: 1em;
     text-align: right; }
   table td::before {
     /*

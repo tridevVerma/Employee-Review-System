@@ -69,14 +69,14 @@ main {
         align-items: center;
         justify-content: space-between; }
         main > .employees-container > .card > .card-heading > h1 {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           font-weight: 500; }
           @media screen and (min-width: 768px) {
             main > .employees-container > .card > .card-heading > h1 {
               padding: 1.5rem; } }
         main > .employees-container > .card > .card-heading > a > i {
           color: var(--body-text);
-          font-size: 1.5rem; }
+          font-size: 1.2rem; }
         main > .employees-container > .card > .card-heading > a:hover i {
           color: crimson; }
       main > .employees-container > .card > .card-content {
@@ -89,6 +89,7 @@ main {
             display: grid;
             grid-template-columns: 40% 60%; }
             main > .employees-container > .card > .card-content > form > div > input {
+              font-size: 1.2rem;
               border: 1px solid grey;
               padding: 0.4rem 0.6rem; }
             main > .employees-container > .card > .card-content > form > div > .switch {
@@ -135,7 +136,8 @@ main {
           main > .employees-container > .card > .card-content > form > button {
             width: 100%;
             border: 2px solid var(--no-focus);
-            padding: 0.4rem 1rem; }
+            padding: 0.4rem 1rem;
+            font-size: 1.2rem; }
             main > .employees-container > .card > .card-content > form > button:hover {
               border: 2px solid var(--on-focus);
               background-color: var(--on-focus);

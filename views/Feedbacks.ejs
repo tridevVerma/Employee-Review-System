@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/feedbacks.css" />
+<main>
+  <div class="feedbacks-list">
+    <% locals.feedbacks.map(feed => { %>
+    <div class="card">
+      <div class="reviewer-info">
+        <h2>Reviewer</h2>
+        <p><span>Email:</span> <%=feed.reviewer.user.email%></p>
+        <p>
+          <span>Name:</span> <%=feed.reviewer.user.firstname%>
+          <%=feed.reviewer.user.lastname%>
+        </p>
+      </div>
+      <div class="reviewee-info">
+        <h2>Reviewee</h2>
+        <p><span>Email:</span> <%=feed.reviewee.user.email%></p>
+        <p>
+          <span>Name:</span> <%=feed.reviewee.user.firstname%>
+          <%=feed.reviewee.user.lastname%>
+        </p>
+      </div>
+
+      <p>
+        <span>Assigned By :</span> <%=feed.assignedBy.user.firstname%>
+        <%=feed.assignedBy.user.lastname%>
+      </p>
+
+      <p><span>Status :</span> <%=feed.status%></p>
+
+      <% if(feed.status === 'complete') { %>
+      <form action="/">
+        <select name="ratings">
+          <option value="1">1⭐</option>
+          <option value="2">2⭐</option>
+          <option value="3">3⭐</option>
+          <option value="4">4⭐</option>
+          <option value="5">5⭐</option>
+        </select>
+        <textarea name="review-body" rows="5">This is Review Body.</textarea>
+        <div class="actions">
+          <button type="submit">Edit</button>
+          <button type="submit">Delete</button>
+        </div>
+      </form>
+      <% } %>
+    </div>
+    <% }) %>
+  </div>
+</main>

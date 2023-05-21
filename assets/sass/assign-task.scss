@@ -1,0 +1,70 @@
+@import "variables";
+@import "colors";
+
+main {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  > h1 {
+    font-size: 1.6rem;
+    @media screen and (min-width: $medium) {
+      font-size: 2rem;
+    }
+  }
+
+  > .container {
+    width: 90%;
+
+    @media screen and (min-width: $medium) {
+      width: 80%;
+    }
+
+    @media screen and (min-width: $large) {
+      width: 70%;
+    }
+
+    > .card {
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      > form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+
+        @media screen and (min-width: $small) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        > div {
+          > label {
+            font-size: 1.4rem;
+          }
+          > select {
+            margin-top: 1rem;
+            width: 100%;
+            font-size: 1.2rem;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--no-focus);
+            color: var(--body-text);
+          }
+        }
+        > button {
+          background-color: var(--on-focus);
+          color: var(--clr-light);
+          padding: 0.6rem 1rem;
+          font-size: 1.4rem;
+          @media screen and (min-width: $small) {
+            grid-column: span 2;
+          }
+        }
+      }
+    }
+  }
+}

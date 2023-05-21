@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/assign-task.css" />
+<main>
+  <h1>Assign Task</h1>
+  <div class="container">
+    <div class="card">
+      <form action="/feedbacks/assign-task" method="POST">
+        <input
+          type="hidden"
+          name="assignedBy"
+          value="<%=locals.user.employee._id%>"
+        />
+        <div>
+          <label for="reviewer">Choose Reviewer:</label>
+
+          <select id="reviewer" name="reviewer">
+            <option disabled selected>Select</option>
+            <%locals.employeesList.map(employee => { %>
+            <option value="<%=employee._id%>">
+              <%=employee.user.firstname%> <%=employee.user.lastname%>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div>
+          <label for="reviewee">Choose Reviewee:</label>
+
+          <select id="reviewee" name="reviewee">
+            <option disabled selected>Select</option>
+            <%locals.employeesList.map(employee => { %>
+            <option value="<%=employee._id%>">
+              <%=employee.user.firstname%> <%=employee.user.lastname%>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+
+        <button type="submit">Assign</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<script src="/scripts/feedbacks.js"></script>
