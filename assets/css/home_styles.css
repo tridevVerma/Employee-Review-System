@@ -14,7 +14,8 @@
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
   --primary: hsl(205, 80%, 50%);
-  --card-bg: hsl(250, 30%, 20%); }
+  --card-bg: hsl(250, 30%, 20%);
+  --danger: hsl(8, 80%, 50%); }
 
 [data-theme="light"] {
   --nav-bg: var(--primary);
@@ -40,31 +41,25 @@
   --body-bg: hsl(252, 30%, 10%);
   --card-bg: hsl(250, 30%, 20%); }
 
-main {
-  margin-top: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem; }
-  main > h1 {
-    width: 90%;
-    text-align: center;
-    font-size: 1.8rem; }
-    @media screen and (min-width: 768px) {
-      main > h1 {
-        font-size: 2rem; } }
-    @media screen and (min-width: 992px) {
-      main > h1 {
-        font-size: 2.5rem; } }
-  main > a {
-    display: block;
-    padding: 1rem 3.5rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--body-bg);
-    background-color: var(--body-text);
-    transition: 0.25s all; }
-    main > a:hover {
-      background-color: var(--primary);
-      color: var(--clr-light); }
+main > h1 {
+  width: 90%;
+  text-align: center;
+  font-size: 1.8rem; }
+  @media screen and (min-width: 768px) {
+    main > h1 {
+      font-size: 2rem; } }
+  @media screen and (min-width: 992px) {
+    main > h1 {
+      font-size: 2.5rem; } }
+
+main > a {
+  display: block;
+  padding: 1rem 3.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--body-bg);
+  background-color: var(--body-text);
+  transition: 0.25s all; }
+  main > a:hover {
+    background-color: var(--primary);
+    color: var(--clr-light); }

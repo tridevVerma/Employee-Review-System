@@ -41,6 +41,9 @@
         padding: 2rem;
       }
       > .feedback-form {
+        > h1 {
+          font-size: 1.8rem;
+        }
         > .card {
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
             rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -104,7 +107,7 @@
                 border: 2px dotted var(--no-focus);
                 padding: 1.5rem 2rem;
                 font-size: 1.2rem;
-
+                color: var(--body-text);
                 &:active,
                 &:focus {
                   outline: none;
@@ -126,6 +129,9 @@
       }
 
       > .previous-feedbacks-list {
+        > h1 {
+          font-size: 1.8rem;
+        }
         display: none;
         > .card {
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,

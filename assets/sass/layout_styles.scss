@@ -40,6 +40,8 @@ select,
 button {
   border: none;
   background-color: transparent;
+  outline: none;
+  color: var(--body-text);
 }
 
 // Overlay on body to show modals or sidebar
@@ -78,4 +80,14 @@ select:-webkit-autofill:focus {
   @media screen and (min-width: $medium) {
     font-size: 1.4rem;
   }
+}
+
+main {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }

@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="/css/add-employee.css" />
+<link rel="stylesheet" href="/css/responsive_table.css" />
 <main>
-  <% if(locals.user && locals.user.employee && locals.user.employee.isAdmin){ %>
   <table>
     <caption>
       Registered Users
@@ -13,7 +12,9 @@
       </tr>
     </thead>
     <tbody>
-      <% locals.registeredUsers.map(user => { %>
+      <% if (locals.registeredUsers.length === 0) { %>
+      <h1>Nothing to show here !!</h1>
+      <% } %> <% locals.registeredUsers.map(user => { %>
       <tr id="user-<%=user._id%>">
         <td scope="row" data-label="Email"><%=user.email%></td>
         <td data-label="Name"><%=user.firstname%> <%=user.lastname%></td>
@@ -26,5 +27,4 @@
       <% }) %>
     </tbody>
   </table>
-  <% } %>
 </main>

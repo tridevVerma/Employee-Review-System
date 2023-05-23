@@ -2,11 +2,6 @@
 // INPUT-BOX STYLING
 
 main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   > form {
     width: 80%;
     margin-left: auto;
@@ -91,7 +86,7 @@ main {
       }
 
       > input:-webkit-autofill {
-        background-color: yellow;
+        background-color: gold;
       }
 
       > input:placeholder-shown ~ span,
@@ -126,7 +121,7 @@ main {
     > button:hover {
       cursor: pointer;
       background: var(--on-focus);
-      color: #fff;
+      color: var(--clr-light);
       border: 3px solid var(--on-focus);
     }
   }

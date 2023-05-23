@@ -9,9 +9,11 @@
     </div>
     <div class="tab-content">
       <div class="feedback-form">
-        <% locals.allFeedbacks.map(feed => { %> <% if (feed.status ===
+        <% if (locals.allFeedbacks.length === 0) { %>
+        <h1>Nothing to show here !!</h1>
+        <% } %> <% locals.allFeedbacks.map(feed => { %> <% if (feed.status ===
         'incomplete') { %>
-        <div class="card">
+        <div class="card" id="card-<%=feed._id%>">
           <div class="card-heading">
             <h1>
               Kindly review <span><%=feed.reviewee.user.firstname%></span>
@@ -30,10 +32,12 @@
               <i class="fa-solid fa-star"></i>
             </div>
             <form action="/feedbacks/write-review" method="post">
+              <input type="hidden" name="feed" value="<%=feed._id%>" />
               <input
                 type="hidden"
                 name="ratings"
                 class="review-rating"
+                id="rating-<%=feed._id%>"
                 value="0"
               />
               <textarea
@@ -49,20 +53,26 @@
         <% } %> <% }) %>
       </div>
       <div class="previous-feedbacks-list">
-        <% locals.allFeedbacks.map(feed => { %> <% if (feed.status ===
+        <% if (locals.allFeedbacks.length === 0) { %>
+        <h1>Nothing to show here !!</h1>
+        <% } %> <% locals.allFeedbacks.map(feed => { %> <% if (feed.status ===
         'complete') { %>
         <div class="card">
           <div class="card-heading">
-            <h1>Reviewed to <span>Saurav</span></h1>
+            <h1>Reviewed to <span><%=feed.reviewee.user.firstname%></span></h1>
             <div class="star-count">
               <i class="fa-solid fa-star"></i>
-              <span>4</span>
+              <span><%=feed.rating%></span>
             </div>
           </div>
-          <p class="admin-info">Assigned by <span>Tridev Verma</span></p>
-          <p class="review-msg">
-            This is the message content of the review given by Tridev Verma.
+          <p class="admin-info">
+            Assigned by
+            <span
+              ><%=feed.assignedBy.user.firstname%>
+              <%=feed.assignedBy.user.lastname%></span
+            >
           </p>
+          <p class="review-msg"><%=feed.text%></p>
         </div>
         <% } %> <%})%>
       </div>

@@ -1,5 +1,7 @@
+@import "colors";
+
 table {
-  border: 1px solid #ccc;
+  border: 1px solid var(--no-focus);
   border-collapse: collapse;
   margin: 0;
   padding: 0;
@@ -13,8 +15,8 @@ table caption {
 }
 
 table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+  background-color: var(--body-bg);
+  border: 1px solid var(--no-focus);
   padding: 0.35em;
 }
 
@@ -57,13 +59,13 @@ table td a {
   }
 
   table tr {
-    border-bottom: 3px solid #ddd;
+    border-bottom: 3px solid var(--no-focus);
     display: block;
     margin-bottom: 0.625em;
   }
 
   table td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--no-focus);
     display: block;
     font-size: 1em;
     text-align: right;

@@ -2,21 +2,18 @@
 @import "colors";
 
 main {
-  margin-top: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
   > .employees-container {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
-
+    grid-template-columns: repeat(auto-fit, 400px);
+    justify-content: space-around;
     gap: 2rem;
 
+    > h1 {
+      text-align: center;
+    }
     > .card {
-      min-width: 0;
+      min-width: 0%;
       max-width: 100%;
       box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
         rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -50,7 +47,7 @@ main {
           }
 
           &:hover i {
-            color: crimson;
+            color: var(--danger);
           }
         }
       }
@@ -66,8 +63,9 @@ main {
             grid-template-columns: 40% 60%;
             > input {
               font-size: 1.2rem;
-              border: 1px solid grey;
+              border: 1px solid var(--no-focus);
               padding: 0.4rem 0.6rem;
+              color: var(--body-text);
             }
 
             > .switch {
@@ -81,11 +79,11 @@ main {
                 height: 0;
 
                 &:checked + .slider {
-                  background-color: #2196f3;
+                  background-color: var(--on-focus);
                 }
 
                 &:focus + .slider {
-                  box-shadow: 0 0 1px #2196f3;
+                  box-shadow: 0 0 1px var(--on-focus);
                 }
 
                 &:checked + .slider:before {
@@ -101,7 +99,7 @@ main {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background-color: #ccc;
+                background-color: #999;
                 -webkit-transition: 0.4s;
                 transition: 0.4s;
 
@@ -112,7 +110,7 @@ main {
                   width: 1rem;
                   left: 4px;
                   bottom: 4px;
-                  background-color: white;
+                  background-color: var(--clr-light);
                   -webkit-transition: 0.4s;
                   transition: 0.4s;
                 }
@@ -133,6 +131,7 @@ main {
             border: 2px solid var(--no-focus);
             padding: 0.4rem 1rem;
             font-size: 1.2rem;
+            color: var(--body-text);
             &:hover {
               border: 2px solid var(--on-focus);
               background-color: var(--on-focus);

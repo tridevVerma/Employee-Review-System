@@ -2,14 +2,11 @@
 @import "colors";
 
 main {
-  margin-top: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
   > .feedbacks-list {
     width: 70%;
+    > h1 {
+      text-align: center;
+    }
     > .card {
       box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
         rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -60,10 +57,12 @@ main {
         > select,
         textarea {
           outline: none;
+          color: var(--body-text);
         }
         > select {
           justify-self: end;
           margin-bottom: 1rem;
+          background-color: var(--card-bg);
         }
         > textarea {
           width: 100%;
@@ -82,8 +81,8 @@ main {
             color: var(--clr-light);
 
             &:last-child {
-              background-color: crimson;
-              margin-left: 0.5rem;
+              background-color: var(--danger);
+              margin-left: 0.6rem;
             }
           }
         }

@@ -1,7 +1,9 @@
-const Feedback = require("../models/Feedback");
 const Employee = require("../models/Employee");
 
 // Render Home Page
+// Populate logged user feedbacks
+// Inside feedbacks populate assigner, reviewer and reviewee
+// Inside each assigner, reviewer and reviewee populate user (their data like name and email)
 module.exports.UI = async (req, res) => {
   let allFeedbacks = [];
   if (req.user && req.user.employee !== null) {

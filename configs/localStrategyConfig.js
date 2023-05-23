@@ -17,11 +17,12 @@ passport.use(
         // If user don't exist or password don't match
         if (!user) {
           userError = true;
-        }
-        const verifyPassword = await bcrypt.compare(password, user.password);
+        } else {
+          const verifyPassword = await bcrypt.compare(password, user.password);
 
-        if (!verifyPassword) {
-          userError = true;
+          if (!verifyPassword) {
+            userError = true;
+          }
         }
 
         if (userError) {
@@ -46,7 +47,8 @@ passport.serializeUser(function (user, done) {
 // deserializing the user from the key in the cookies
 passport.deserializeUser(async function (id, done) {
   try {
-    const user = await User.findById(id).populate({
+    // Find User and populate its employee field
+    const user = await User.findById(id).select("-password").populate({
       path: "employee",
       model: "Employee",
     });
@@ -69,15 +71,19 @@ passport.checkAuthentication = function (req, res, next) {
   return res.redirect("/users/signin");
 };
 
+// check if logged user is admin
 passport.checkAdminAuthentication = function (req, res, next) {
   if (!req.isAuthenticated()) {
+    // If not authenticated return to signin page
     return res.redirect("/users/signin");
   }
 
+  // If logged user is employee and he/she is an admin --> proceed to next middleware
   if (req.user.employee !== null && req.user.employee.isAdmin) {
     return next();
   }
 
+  // If not a employee or not admin --> show error
   req.flash("error", "Admin authentication needed !!");
   return res.redirect("back");
 };

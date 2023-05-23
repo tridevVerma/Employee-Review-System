@@ -14,7 +14,8 @@
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
   --primary: hsl(205, 80%, 50%);
-  --card-bg: hsl(250, 30%, 20%); }
+  --card-bg: hsl(250, 30%, 20%);
+  --danger: hsl(8, 80%, 50%); }
 
 [data-theme="light"] {
   --nav-bg: var(--primary);
@@ -40,53 +41,45 @@
   --body-bg: hsl(252, 30%, 10%);
   --card-bg: hsl(250, 30%, 20%); }
 
-main {
-  margin-top: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem; }
-  main > h1 {
-    font-size: 1.6rem; }
-    @media screen and (min-width: 768px) {
-      main > h1 {
-        font-size: 2rem; } }
-  main > .container {
-    width: 90%; }
-    @media screen and (min-width: 768px) {
-      main > .container {
-        width: 80%; } }
-    @media screen and (min-width: 992px) {
-      main > .container {
-        width: 70%; } }
-    main > .container > .card {
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-      background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: 1rem; }
-      main > .container > .card > form {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 1.5rem; }
+main > h1 {
+  font-size: 2rem; }
+
+main > .container {
+  width: 90%; }
+  @media screen and (min-width: 768px) {
+    main > .container {
+      width: 80%; } }
+  @media screen and (min-width: 992px) {
+    main > .container {
+      width: 70%; } }
+  main > .container > .card {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem; }
+    main > .container > .card > form {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1.5rem; }
+      @media screen and (min-width: 576px) {
+        main > .container > .card > form {
+          grid-template-columns: repeat(2, 1fr); } }
+      main > .container > .card > form > div > label {
+        font-size: 1.4rem; }
+      main > .container > .card > form > div > select {
+        margin-top: 1rem;
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        border: 2px solid var(--no-focus);
+        color: var(--body-text);
+        background-color: var(--card-bg); }
+      main > .container > .card > form > button {
+        background-color: var(--on-focus);
+        color: var(--clr-light);
+        padding: 0.6rem 1rem;
+        font-size: 1.4rem; }
         @media screen and (min-width: 576px) {
-          main > .container > .card > form {
-            grid-template-columns: repeat(2, 1fr); } }
-        main > .container > .card > form > div > label {
-          font-size: 1.4rem; }
-        main > .container > .card > form > div > select {
-          margin-top: 1rem;
-          width: 100%;
-          font-size: 1.2rem;
-          padding: 0.6rem 1.2rem;
-          border: 2px solid var(--no-focus);
-          color: var(--body-text); }
-        main > .container > .card > form > button {
-          background-color: var(--on-focus);
-          color: var(--clr-light);
-          padding: 0.6rem 1rem;
-          font-size: 1.4rem; }
-          @media screen and (min-width: 576px) {
-            main > .container > .card > form > button {
-              grid-column: span 2; } }
+          main > .container > .card > form > button {
+            grid-column: span 2; } }

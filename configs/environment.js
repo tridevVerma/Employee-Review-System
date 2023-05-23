@@ -8,8 +8,8 @@ const development = {
   asset_path: "assets",
   views_path: "./views",
   session_secret_key: "44ED63516724B",
-  admin_email: "admin23@gmail.com",
-  admin_pwd: "admin123",
+  admin_email: "admin@gmail.com",
+  admin_password: "admin123",
 };
 
 // Production Mode

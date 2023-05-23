@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="/css/all-employees.css" />
 <main>
-  <% if(locals.user && locals.user.employee && locals.user.employee.isAdmin){ %>
   <div class="employees-container">
-    <% locals.allEmployees.map(employee => { %>
+    <% if (locals.allEmployees.length === 0) { %>
+    <h1>Nothing to show here !!</h1>
+    <% } %> <% locals.allEmployees.map(employee => { %>
     <div class="card" id="employee-<%=employee._id%>">
       <div class="card-heading">
         <h2>Employee</h2>
@@ -62,5 +63,4 @@
     </div>
     <% }) %>
   </div>
-  <% } %>
 </main>

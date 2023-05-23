@@ -14,7 +14,8 @@
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
   --primary: hsl(205, 80%, 50%);
-  --card-bg: hsl(250, 30%, 20%); }
+  --card-bg: hsl(250, 30%, 20%);
+  --danger: hsl(8, 80%, 50%); }
 
 [data-theme="light"] {
   --nav-bg: var(--primary);
@@ -71,6 +72,8 @@
       @media screen and (min-width: 768px) {
         .employee-view > .container > .tab-content {
           padding: 2rem; } }
+      .employee-view > .container > .tab-content > .feedback-form > h1 {
+        font-size: 1.8rem; }
       .employee-view > .container > .tab-content > .feedback-form > .card {
         box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         background-color: var(--card-bg);
@@ -124,7 +127,8 @@
               width: 100%;
               border: 2px dotted var(--no-focus);
               padding: 1.5rem 2rem;
-              font-size: 1.2rem; }
+              font-size: 1.2rem;
+              color: var(--body-text); }
               .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > textarea:active, .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > textarea:focus {
                 outline: none; }
             .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > button {
@@ -137,6 +141,8 @@
               margin-top: 1.5rem; }
       .employee-view > .container > .tab-content > .previous-feedbacks-list {
         display: none; }
+        .employee-view > .container > .tab-content > .previous-feedbacks-list > h1 {
+          font-size: 1.8rem; }
         .employee-view > .container > .tab-content > .previous-feedbacks-list > .card {
           box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
           background-color: var(--card-bg);

@@ -6,13 +6,17 @@
 
     // On page load
     const currentTheme = localStorage.getItem("data-theme");
+
     if (currentTheme !== null) {
       // If currentTheme is set
       $("html").attr("data-theme", currentTheme);
+
       if (currentTheme === "dark") {
+        // if current theme is dark
         $(themeImage).attr("src", "/images/moon.png");
         $(themeLabel).text("Night");
       } else {
+        // if current theme is light
         $(themeImage).attr("src", "/images/sun.png");
         $(themeLabel).text("Day");
       }

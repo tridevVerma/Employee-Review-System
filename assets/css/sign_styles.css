@@ -1,106 +1,101 @@
-main {
-  height: 100vh;
-  display: flex;
+main > form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
   justify-content: center;
-  align-items: center; }
-  main > form {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-content: center;
-    justify-content: center;
-    grid-gap: 2rem; }
-    @media screen and (min-width: 576px) {
-      main > form {
-        width: 60%; } }
-    @media screen and (min-width: 768px) {
-      main > form {
-        width: 40%; } }
-    main > form > .heading {
-      text-align: center; }
-      main > form > .heading > img {
-        width: 6rem; }
-      main > form > .heading > h1 {
-        margin: 2rem auto;
-        font-size: 2rem;
-        color: var(--on-focus); }
-    main > form > .input-box {
+  grid-gap: 2rem; }
+  @media screen and (min-width: 576px) {
+    main > form {
+      width: 60%; } }
+  @media screen and (min-width: 768px) {
+    main > form {
+      width: 40%; } }
+  main > form > .heading {
+    text-align: center; }
+    main > form > .heading > img {
+      width: 6rem; }
+    main > form > .heading > h1 {
+      margin: 2rem auto;
+      font-size: 2rem;
+      color: var(--on-focus); }
+  main > form > .input-box {
+    width: 100%;
+    position: relative; }
+    main > form > .input-box > input {
       width: 100%;
-      position: relative; }
-      main > form > .input-box > input {
-        width: 100%;
-        font-size: 1.2rem;
-        padding: 0.8rem 1rem;
-        outline: none;
-        background-color: transparent;
-        border: 3px solid var(--no-focus);
-        color: var(--body-text);
-        transition: 0.35s all; }
-        @media screen and (min-width: 768px) {
-          main > form > .input-box > input {
-            font-size: 1.4rem; } }
-      main > form > .input-box > span {
-        display: block;
-        padding: 0.8rem 1rem;
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: var(--no-focus);
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        transition: 0.35s all;
-        z-index: -1; }
-        @media screen and (min-width: 768px) {
-          main > form > .input-box > span {
-            font-size: 1.4rem; } }
-      main > form > .input-box > input:valid ~ span,
-      main > form > .input-box > input:focus ~ span {
-        color: var(--on-focus);
-        background-color: var(--body-bg);
-        transform: translate(10px, -6px);
-        font-size: 0.8rem;
-        border-left: 2px solid var(--on-focus);
-        border-right: 2px solid var(--on-focus);
-        padding: 0rem 0.6rem;
-        z-index: 2; }
-        @media screen and (min-width: 768px) {
-          main > form > .input-box > input:valid ~ span,
-          main > form > .input-box > input:focus ~ span {
-            font-size: 1rem; } }
-      main > form > .input-box > input:valid,
-      main > form > .input-box > input:focus {
-        border: 3px solid var(--on-focus); }
-      main > form > .input-box > input:-webkit-autofill {
-        background-color: yellow; }
-      main > form > .input-box > input:placeholder-shown ~ span,
-      main > form > .input-box > input:-webkit-autofill ~ span {
-        color: var(--on-focus);
-        background-color: var(--body-bg);
-        transform: translate(10px, -6px);
-        font-size: 0.8rem;
-        border-left: 2px solid var(--on-focus);
-        border-right: 2px solid var(--on-focus);
-        padding: 0rem 0.6rem;
-        z-index: 2; }
-        @media screen and (min-width: 768px) {
-          main > form > .input-box > input:placeholder-shown ~ span,
-          main > form > .input-box > input:-webkit-autofill ~ span {
-            font-size: 1rem; } }
-    main > form > button {
-      width: 100%;
-      padding: 0.8rem;
       font-size: 1.2rem;
+      padding: 0.8rem 1rem;
+      outline: none;
       background-color: transparent;
-      color: var(--no-focus);
       border: 3px solid var(--no-focus);
-      transition: 0.25s all; }
+      color: var(--body-text);
+      transition: 0.35s all; }
       @media screen and (min-width: 768px) {
-        main > form > button {
+        main > form > .input-box > input {
           font-size: 1.4rem; } }
-    main > form > button:hover {
-      cursor: pointer;
-      background: var(--on-focus);
-      color: #fff;
+    main > form > .input-box > span {
+      display: block;
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--no-focus);
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      transition: 0.35s all;
+      z-index: -1; }
+      @media screen and (min-width: 768px) {
+        main > form > .input-box > span {
+          font-size: 1.4rem; } }
+    main > form > .input-box > input:valid ~ span,
+    main > form > .input-box > input:focus ~ span {
+      color: var(--on-focus);
+      background-color: var(--body-bg);
+      transform: translate(10px, -6px);
+      font-size: 0.8rem;
+      border-left: 2px solid var(--on-focus);
+      border-right: 2px solid var(--on-focus);
+      padding: 0rem 0.6rem;
+      z-index: 2; }
+      @media screen and (min-width: 768px) {
+        main > form > .input-box > input:valid ~ span,
+        main > form > .input-box > input:focus ~ span {
+          font-size: 1rem; } }
+    main > form > .input-box > input:valid,
+    main > form > .input-box > input:focus {
       border: 3px solid var(--on-focus); }
+    main > form > .input-box > input:-webkit-autofill {
+      background-color: gold; }
+    main > form > .input-box > input:placeholder-shown ~ span,
+    main > form > .input-box > input:-webkit-autofill ~ span {
+      color: var(--on-focus);
+      background-color: var(--body-bg);
+      transform: translate(10px, -6px);
+      font-size: 0.8rem;
+      border-left: 2px solid var(--on-focus);
+      border-right: 2px solid var(--on-focus);
+      padding: 0rem 0.6rem;
+      z-index: 2; }
+      @media screen and (min-width: 768px) {
+        main > form > .input-box > input:placeholder-shown ~ span,
+        main > form > .input-box > input:-webkit-autofill ~ span {
+          font-size: 1rem; } }
+  main > form > button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: var(--no-focus);
+    border: 3px solid var(--no-focus);
+    transition: 0.25s all; }
+    @media screen and (min-width: 768px) {
+      main > form > button {
+        font-size: 1.4rem; } }
+  main > form > button:hover {
+    cursor: pointer;
+    background: var(--on-focus);
+    color: var(--clr-light);
+    border: 3px solid var(--on-focus); }

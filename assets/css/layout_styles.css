@@ -15,7 +15,8 @@
   --body-text: hsl(0, 0%, 95%);
   --body-bg: hsl(252, 30%, 10%);
   --primary: hsl(205, 80%, 50%);
-  --card-bg: hsl(250, 30%, 20%); }
+  --card-bg: hsl(250, 30%, 20%);
+  --danger: hsl(8, 80%, 50%); }
 
 [data-theme="light"] {
   --nav-bg: var(--primary);
@@ -74,7 +75,9 @@ textarea,
 select,
 button {
   border: none;
-  background-color: transparent; }
+  background-color: transparent;
+  outline: none;
+  color: var(--body-text); }
 
 .overlay {
   width: 100%;
@@ -116,3 +119,12 @@ select:-webkit-autofill:focus {
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
       font-size: 1.4rem; } }
+
+main {
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem; }

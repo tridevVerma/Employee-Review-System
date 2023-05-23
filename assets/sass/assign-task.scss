@@ -2,18 +2,8 @@
 @import "colors";
 
 main {
-  margin-top: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-
   > h1 {
-    font-size: 1.6rem;
-    @media screen and (min-width: $medium) {
-      font-size: 2rem;
-    }
+    font-size: 2rem;
   }
 
   > .container {
@@ -53,6 +43,7 @@ main {
             padding: 0.6rem 1.2rem;
             border: 2px solid var(--no-focus);
             color: var(--body-text);
+            background-color: var(--card-bg);
           }
         }
         > button {

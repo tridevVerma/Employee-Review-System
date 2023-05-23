@@ -56,6 +56,7 @@ app.use(customFlash);
 // set up routes
 app.use("/", require("./routes"));
 
+// connecting db and starting server
 db()
   .then(() => {
     app.listen(port, (err) => {
