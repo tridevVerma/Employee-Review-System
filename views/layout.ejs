@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%=title%></title>
-    <link rel="stylesheet" href="/css/layout_styles.css" />
+
+    <!-- CUSTOM CSS -->
+    <link
+      rel="stylesheet"
+      href="<%=locals.assetPath('layout_styles.css', 'css')%>"
+    />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/ico" href="images/rating.png" />
@@ -87,9 +92,9 @@
           }).show();
       <% } %>
     </script>
-    <script src="/scripts/sidebar.js"></script>
-    <script src="/scripts/toggleTheme.js"></script>
-    <script src="/scripts/employee.js"></script>
+    <script src="<%=locals.assetPath('sidebar.js', 'scripts')%>"></script>
+    <script src="<%=locals.assetPath('toggleTheme.js', 'scripts')%>"></script>
+    <script src="<%=locals.assetPath('employee.js', 'scripts')%>"></script>
     <%- script%>
   </body>
 </html>

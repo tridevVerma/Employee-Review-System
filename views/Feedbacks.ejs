@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="/css/feedbacks.css" />
+<link
+  rel="stylesheet"
+  href="<%=locals.assetPath('feedbacks_styles.css', 'css')%>"
+/>
+
 <main>
   <div class="feedbacks-list">
     <% if(locals.feedbacks.length === 0) { %>
@@ -53,4 +57,4 @@
   </div>
 </main>
 
-<script src="/scripts/feedback.js"></script>
+<script src="<%=locals.assetPath('feedback.js', 'scripts')%>"></script>

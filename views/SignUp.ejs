@@ -1,8 +1,9 @@
-<link rel="stylesheet" href="/css/sign_styles.css" />
+<link rel="stylesheet" href="<%=locals.assetPath('sign_styles.css', 'css')%>" />
+
 <main>
   <form action="/users/signup" method="post">
     <div class="heading">
-      <img src="/images/rating.png" alt="logo" />
+      <img src="<%=locals.assetPath('rating.png', 'images')%>" alt="logo" />
       <h1>Register Yourself</h1>
     </div>
     <div class="input-box">

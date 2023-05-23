@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="/css/all-employees.css" />
+<link
+  rel="stylesheet"
+  href="<%=locals.assetPath('all_employees_styles.css', 'css')%>"
+/>
+
 <main>
   <div class="employees-container">
     <% if (locals.allEmployees.length === 0) { %>

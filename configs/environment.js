@@ -16,11 +16,14 @@ const development = {
 const production = {
   name: "production",
   domain: "localhost",
-  mongodb_URI: `mongodb+srv://${process.env.ISSUE_TRACKER_DB_USERNAME}:${process.env.ISSUE_TRACKER_DB_PASSWORD}@cluster0.bljbc4x.mongodb.net/${process.env.ISSUE_TRACKER_DB_NAME}?retryWrites=true&w=majority`,
-  db_name: process.env.ISSUE_TRACKER_DB_NAME,
+  mongodb_URI: `mongodb+srv://${process.env.ERS_DB_USERNAME}:${process.env.ERS_DB_PASSWORD}@cluster0.iuoooga.mongodb.net/${process.env.ERS_DB_NAME}?retryWrites=true&w=majority`,
+  db_name: process.env.ERS_DB_NAME,
   server_port: process.env.PORT,
   asset_path: process.env.ASSET_PATH,
   views_path: "./views",
+  session_secret_key: process.env.ERS_SESSION_SECRET_KEY,
+  admin_email: process.env.ADMIN_EMAIL,
+  admin_password: process.env.ADMIN_PASSWORD,
 };
 
 module.exports =

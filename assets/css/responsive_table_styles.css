@@ -1,0 +1,109 @@
+:root {
+  --clr-dark: hsl(0, 100%, 0%);
+  --clr-light: hsl(0, 0%, 100%);
+  --dark-bg-1: hsl(250, 30%, 20%);
+  --dark-bg-2: hsl(250, 30%, 10%);
+  --dark-bg-3: hsl(220, 30%, 20%);
+  --dark-text: hsl(0, 0%, 95%);
+  --light-bg-1: hsl(0, 0%, 95%);
+  --light-bg-2: hsl(250, 10%, 90%);
+  --light-bg-3: hsl(240, 5%, 90%);
+  --light-text: hsl(250, 30%, 10%);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --primary: hsl(205, 80%, 50%);
+  --card-bg: hsl(250, 30%, 20%);
+  --danger: hsl(8, 80%, 50%); }
+
+[data-theme="light"] {
+  --nav-bg: var(--primary);
+  --nav-text: var(--dark-text);
+  --body-bg: var(--light-bg-2);
+  --body-text: var(--light-text);
+  --sidebar-bg: var(--light-bg-3);
+  --no-focus: hsl(240, 20%, 85%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 15%);
+  --body-bg: hsl(220, 20%, 95%);
+  --card-bg: hsl(0, 0%, 96%); }
+
+[data-theme="dark"] {
+  --nav-bg: var(--dark-bg-1);
+  --nav-text: var(--dark-text);
+  --body-bg: var(--dark-bg-2);
+  --body-text: var(--dark-text);
+  --sidebar-bg: var(--dark-bg-3);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --card-bg: hsl(250, 30%, 20%); }
+
+table {
+  border: 1px solid var(--no-focus);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  table-layout: fixed; }
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em; }
+
+table tr {
+  background-color: var(--body-bg);
+  border: 1px solid var(--no-focus);
+  padding: 0.35em; }
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center; }
+
+table th {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }
+
+table td a {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--on-focus);
+  color: var(--clr-light); }
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0; }
+  table caption {
+    font-size: 1.3rem; }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+  table tr {
+    border-bottom: 3px solid var(--no-focus);
+    display: block;
+    margin-bottom: 0.625em; }
+  table td {
+    border-bottom: 1px solid var(--no-focus);
+    display: block;
+    font-size: 1em;
+    text-align: right; }
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase; }
+  table td:last-child {
+    border-bottom: 0; } }

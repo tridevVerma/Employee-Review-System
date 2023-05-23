@@ -11,6 +11,7 @@ const session = require("express-session"); // express-session required by conne
 const connectMongoStore = require("connect-mongo");
 const flash = require("connect-flash"); // to show toast messages
 const { customFlash } = require("./configs/customFlashMiddleware.js"); // toast messages configuration
+require("./configs/viewHelper")(app); // provide app to be used by viewHelper to provide local fn to all views
 const port = env.server_port;
 
 // set up body parser and path of static files

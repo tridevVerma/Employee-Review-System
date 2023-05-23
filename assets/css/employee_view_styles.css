@@ -1,0 +1,178 @@
+:root {
+  --clr-dark: hsl(0, 100%, 0%);
+  --clr-light: hsl(0, 0%, 100%);
+  --dark-bg-1: hsl(250, 30%, 20%);
+  --dark-bg-2: hsl(250, 30%, 10%);
+  --dark-bg-3: hsl(220, 30%, 20%);
+  --dark-text: hsl(0, 0%, 95%);
+  --light-bg-1: hsl(0, 0%, 95%);
+  --light-bg-2: hsl(250, 10%, 90%);
+  --light-bg-3: hsl(240, 5%, 90%);
+  --light-text: hsl(250, 30%, 10%);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --primary: hsl(205, 80%, 50%);
+  --card-bg: hsl(250, 30%, 20%);
+  --danger: hsl(8, 80%, 50%); }
+
+[data-theme="light"] {
+  --nav-bg: var(--primary);
+  --nav-text: var(--dark-text);
+  --body-bg: var(--light-bg-2);
+  --body-text: var(--light-text);
+  --sidebar-bg: var(--light-bg-3);
+  --no-focus: hsl(240, 20%, 85%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 15%);
+  --body-bg: hsl(220, 20%, 95%);
+  --card-bg: hsl(0, 0%, 96%); }
+
+[data-theme="dark"] {
+  --nav-bg: var(--dark-bg-1);
+  --nav-text: var(--dark-text);
+  --body-bg: var(--dark-bg-2);
+  --body-text: var(--dark-text);
+  --sidebar-bg: var(--dark-bg-3);
+  --no-focus: hsl(252, 10%, 40%);
+  --on-focus: hsl(205, 80%, 50%);
+  --body-text: hsl(0, 0%, 95%);
+  --body-bg: hsl(252, 30%, 10%);
+  --card-bg: hsl(250, 30%, 20%); }
+
+.employee-view {
+  width: 95%; }
+  @media screen and (min-width: 768px) {
+    .employee-view {
+      width: 80%; } }
+  @media screen and (min-width: 1200px) {
+    .employee-view {
+      width: 60%; } }
+  .employee-view > .container {
+    margin: 2rem auto; }
+    .employee-view > .container > .tabs > ul {
+      display: flex;
+      align-items: center; }
+      .employee-view > .container > .tabs > ul > li {
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem; }
+        @media screen and (min-width: 768px) {
+          .employee-view > .container > .tabs > ul > li {
+            font-size: 1.5rem; } }
+        .employee-view > .container > .tabs > ul > li:hover {
+          cursor: pointer; }
+      .employee-view > .container > .tabs > ul > .active-tab {
+        background-color: var(--on-focus);
+        color: var(--clr-light); }
+    .employee-view > .container > .tab-content {
+      margin-top: -3px;
+      border: 3px dashed var(--no-focus);
+      padding: 1rem; }
+      @media screen and (min-width: 768px) {
+        .employee-view > .container > .tab-content {
+          padding: 2rem; } }
+      .employee-view > .container > .tab-content > .feedback-form > h1 {
+        font-size: 1.8rem; }
+      .employee-view > .container > .tab-content > .feedback-form > .card {
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        margin-bottom: 3rem;
+        border-radius: 1rem; }
+        .employee-view > .container > .tab-content > .feedback-form > .card:last-child {
+          margin-bottom: 0rem; }
+        .employee-view > .container > .tab-content > .feedback-form > .card > .card-heading {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 1rem; }
+          @media screen and (min-width: 768px) {
+            .employee-view > .container > .tab-content > .feedback-form > .card > .card-heading {
+              flex-direction: row; } }
+          .employee-view > .container > .tab-content > .feedback-form > .card > .card-heading > h1 {
+            font-size: 1.5rem; }
+            @media screen and (min-width: 768px) {
+              .employee-view > .container > .tab-content > .feedback-form > .card > .card-heading > h1 {
+                font-size: 1.8rem; } }
+            .employee-view > .container > .tab-content > .feedback-form > .card > .card-heading > h1 > span {
+              font-style: italic; }
+        .employee-view > .container > .tab-content > .feedback-form > .card > .card-content {
+          margin-top: 1rem; }
+          .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > .ratings {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row-reverse;
+            gap: 2rem; }
+            @media screen and (min-width: 768px) {
+              .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > .ratings {
+                justify-content: flex-end; } }
+            .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > .ratings > i {
+              font-size: 1.5rem;
+              overflow: hidden; }
+              @media screen and (min-width: 768px) {
+                .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > .ratings > i {
+                  font-size: 2rem; } }
+              .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > .ratings > i:hover,
+              .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > .ratings > i:hover ~ i {
+                color: gold;
+                cursor: pointer; }
+          .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form {
+            width: 100%;
+            margin-top: 2rem; }
+            .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > textarea {
+              display: block;
+              width: 100%;
+              border: 2px dotted var(--no-focus);
+              padding: 1.5rem 2rem;
+              font-size: 1.2rem;
+              color: var(--body-text); }
+              .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > textarea:active, .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > textarea:focus {
+                outline: none; }
+            .employee-view > .container > .tab-content > .feedback-form > .card > .card-content > form > button {
+              background-color: var(--on-focus);
+              color: var(--clr-light);
+              font-size: 1.2rem;
+              padding: 0.6rem 2.5rem;
+              display: block;
+              margin-left: auto;
+              margin-top: 1.5rem; }
+      .employee-view > .container > .tab-content > .previous-feedbacks-list {
+        display: none; }
+        .employee-view > .container > .tab-content > .previous-feedbacks-list > h1 {
+          font-size: 1.8rem; }
+        .employee-view > .container > .tab-content > .previous-feedbacks-list > .card {
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          background-color: var(--card-bg);
+          padding: 1.5rem;
+          margin-bottom: 3rem;
+          border-radius: 0.8rem; }
+          .employee-view > .container > .tab-content > .previous-feedbacks-list > .card:last-child {
+            margin-bottom: 0rem; }
+          .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .card-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; }
+            .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .card-heading > h1 {
+              font-size: 1.5rem; }
+              @media screen and (min-width: 768px) {
+                .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .card-heading > h1 {
+                  font-size: 1.8rem; } }
+              .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .card-heading > h1 > span {
+                font-style: italic; }
+            .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .card-heading > .star-count {
+              font-size: 1.2rem; }
+              .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .card-heading > .star-count > i {
+                font-size: 1.2rem;
+                color: gold; }
+          .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .admin-info {
+            margin: 1rem auto; }
+            .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .admin-info > span {
+              font-weight: 600; }
+          .employee-view > .container > .tab-content > .previous-feedbacks-list > .card > .review-msg {
+            margin: 2rem auto; }
+
+.rated {
+  color: gold; }

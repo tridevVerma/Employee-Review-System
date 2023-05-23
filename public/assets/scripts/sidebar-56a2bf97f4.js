@@ -1,0 +1,1 @@
+!function(){const i=$("#sidebar-toggler"),e=$(".sidebar-container"),c=$(".close-sidebar"),o=$(".overlay"),d=function(){$(o).hide(),$(e).addClass("hide")};$(i).click((function(){$(o).show(),$(e).removeClass("hide"),$(o).click(d)})),$(c).click(d);const s=$("nav > ul");$(document).width()-$(s).width()<=500?($(s).hide(),$(i).show()):($(s).show(),$(i).hide())}();

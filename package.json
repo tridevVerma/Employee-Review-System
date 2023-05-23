@@ -4,9 +4,10 @@
   "description": "Employee Review System",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "index.js",
     "start": "nodemon index.js",
-    "sass": "node-sass --watch assets/sass -o assets/css"
+    "sass": "node-sass --watch assets/sass -o assets/css",
+    "production": "set NODE_ENV=production&&node index.js"
   },
   "keywords": [
     "EMPLOYEES",
@@ -30,5 +31,15 @@
     "node-sass": "^8.0.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-rev": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.62.1"
   }
 }

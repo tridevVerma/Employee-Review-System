@@ -59,7 +59,7 @@ button {
 // Hide elements on small screen
 .hide-on-small-screen {
   display: none;
-  @media screen and(min-width: $large) {
+  @media screen and (min-width: $large) {
     display: inline-block;
   }
 }
