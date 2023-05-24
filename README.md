@@ -11,7 +11,7 @@ Hoisted Link : [ERS](https://employee-review-system-b6f2.onrender.com)
   - For development
     ```` 
           npm install 
-          npm start || nodemon index.js
+          npm start
     ````
   - For Production
     ```` 
