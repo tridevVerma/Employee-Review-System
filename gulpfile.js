@@ -65,6 +65,38 @@ gulp.task("js", async function (done) {
   done();
 });
 
+/**
+ * Get all images --> .png, .jpg, .gif, .svg, .jpeg
+ * minify images with imagemin
+ * rename images with hash
+ * store them in public assets folder
+ * map images with hash in manifest.json
+ * restore them in public assets folder
+ */
+gulp.task("images", async function (done) {
+  console.log("compressing images...");
+
+  let rev = await import("gulp-rev");
+  rev = rev.default;
+
+  let imagemin = await import("gulp-imagemin");
+  imagemin = imagemin.default;
+
+  gulp
+    .src("./assets/images/**/*.+(png|jpg|gif|svg|jpeg)")
+    .pipe(imagemin())
+    .pipe(rev())
+    .pipe(gulp.dest("./public/assets/images"))
+    .pipe(
+      rev.manifest("./public/assets/rev-manifest.json", {
+        base: "public/assets",
+        merge: true,
+      })
+    )
+    .pipe(gulp.dest("./public/assets"));
+  done();
+});
+
 // empty the public/assets directory for each build run
 gulp.task("clean", async function (done) {
   const del = await import("del");
@@ -73,7 +105,11 @@ gulp.task("clean", async function (done) {
 });
 
 // combine all tasks together
-gulp.task("build", gulp.series("clean", "css", "js"), function (done) {
-  console.log("Building assets");
-  done();
-});
+gulp.task(
+  "build",
+  gulp.series("clean", "css", "js", "images"),
+  function (done) {
+    console.log("Building assets");
+    done();
+  }
+);
