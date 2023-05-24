@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "main": "index.js",
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "sass": "node-sass --watch assets/sass -o assets/css",
-    "production": "set NODE_ENV=production&&node index.js"
+    "production": "set NODE_ENV=production&&node index.js",
+    "build": "npm install -g gulp && npm install && gulp-build"
   },
   "keywords": [
     "EMPLOYEES",
