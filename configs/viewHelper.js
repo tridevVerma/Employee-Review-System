@@ -8,10 +8,10 @@ module.exports = function (app) {
 
   app.locals.assetPath = function (fileName, type) {
     if (env.name == "development") {
-      return `${env.domain}/${type}/${fileName}`;
+      return `/${type}/${fileName}`;
     }
 
-    const newFileName = `${env.domain}/${type}/${
+    const newFileName = `/${type}/${
       JSON.parse(
         fs.readFileSync(
           path.join(__dirname, "../public/assets/rev-manifest.json")
