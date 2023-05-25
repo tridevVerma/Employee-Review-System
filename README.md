@@ -14,6 +14,7 @@ Hoisted Link : [ERS](https://employee-review-system-b6f2.onrender.com)
           npm start
     ````
   - For Production
+    Setup env variables
     ```` 
           npm install 
           npm run production
