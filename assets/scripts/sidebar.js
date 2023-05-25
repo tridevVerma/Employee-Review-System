@@ -24,15 +24,21 @@
     // Click on close button --> close sidebar
     $(closeSidebar).click(hideSidebar);
 
-    const nav = $("nav > ul");
+    window.addEventListener(
+      "resize",
+      function () {
+        const nav = $("nav > ul");
 
-    if ($(document).width() - $(nav).width() <= 500) {
-      // If nav takes more space due to more links (admin nav) hide navbar and show sidebar
-      $(nav).hide();
-      $(sidebarToggler).show();
-    } else {
-      $(nav).show();
-      $(sidebarToggler).hide();
-    }
+        if ($(document).width() - $(nav).width() <= 600) {
+          // If nav takes more space due to more links (admin nav) hide navbar and show sidebar
+          $(nav).hide();
+          $(sidebarToggler).show();
+        } else {
+          $(nav).css("display", "flex");
+          $(sidebarToggler).hide();
+        }
+      },
+      true
+    );
   })();
 }
